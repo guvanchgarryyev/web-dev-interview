@@ -29,3 +29,49 @@ function printNumbers() {
 }
 // call the function
 printNumbers();
+
+
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+// Fibonacci Sequence
+
+// define our variables
+let array = [0, 1];
+const iterations = 15;
+
+function fibonacciSequence(array, iterations) {
+    // get numbers from our array
+    let number1 = array[0];
+    let number2 = array[1];
+    
+    let counter = array.length;
+    let next;
+
+    // calculate fibonacci sequence as long as counter is less than iterations
+    while (counter < iterations) {
+        // next is always the result of last two numbers
+        next = number1 + number2;    
+        array.push(next);
+        // assign new values for the last two numbers
+        number1 = number2;
+        number2 = next;
+        // increment counter
+        counter++;
+    }
+    // return array of fibonacci sequence
+    return array;
+}
+// display the result on the console
+console.log(fibonacciSequence(array, iterations));
+
+
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+    // Recursion solution for fibonacci sequence
+        // function fibonacci(array, length) {
+        //     if (length <= array.length)
+        //         return array;
+            
+        //     array.push(array[array.length - 2] + array[array.length - 1]);
+        //     return fibonacci(array, length);
+        // }
